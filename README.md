@@ -13,5 +13,5 @@ OPTIONAL:Setup keyboard layout if need be
 2. mkfs.ext4 your root partitions
 3. mkswap+swapon your swaps
 4. mkfs.fat -F32 your efi partition (if you have efi partition)
-5. Mount your root partition
+5. Mount your root+efi partition
 6. Run arch-install-script and feel proud that you installed Arch Linux
