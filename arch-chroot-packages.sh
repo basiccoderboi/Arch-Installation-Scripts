@@ -2,7 +2,7 @@
 
 echo Fixing time, language, and privileges....
 echo Note: you may need to manipulate some files yourself
-sleep 10s
+sleep 5s
 #set time
 ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
 hwclock --systohc
@@ -29,7 +29,7 @@ reflector --country 'Singapore' --age 17 --protocol https --sort rate --save /et
 pacman -Syy
 
 echo Now installing KDE, Xorg, and other essential packages
-sleep 10s
+sleep 5s
 #package install hell
 pacman -S --noconfirm xorg xorg-apps xorg-server xorg-drivers xterm mesa linux-headers xdg-user-dirs fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged git unrar unzip htop lsb-release polkit man-db man-pages firefox cups system-config-printer foomatic-db-engine foomatic-db-ppds foomatic-db-nonfree-ppds gutenprint ghostscript networkmanager network-manager-applet lightdm lightdm-gtk-greeter ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts intel-ucode plasma-desktop
 
