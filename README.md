@@ -6,6 +6,7 @@ This script aims to help you\* setup Arch Linux easily, with the formatting of d
 
 
 How to use this:
+
 OPTIONAL:Setup keyboard layout if need be
 
 0. Set up your system time
@@ -15,3 +16,8 @@ OPTIONAL:Setup keyboard layout if need be
 4. mkfs.fat -F32 your efi partition (if you have efi partition)
 5. Mount your root+efi partition
 6. Run arch-install-script and feel proud that you installed Arch Linux
+
+ADVICE:
+efi partition - around 550M
+swap - size of RAM + 0.5M
+root - rest of device

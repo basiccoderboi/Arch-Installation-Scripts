@@ -2,7 +2,7 @@
 
 echo Fixing time, language, and privileges....
 echo Note: you may need to manipulate some files yourself
-
+sleep 10s
 #set time
 ln -sf /usr/share/zoneinfo/Asia/Manila /etc/localtime
 hwclock --systohc
@@ -20,8 +20,7 @@ cat /etc/hosts
 mkinitcpio -P
 
 #new user and password + privileges
-useradd -m -G sys,wheel,users,adm,log -s /bin/bash Iko
-passwd Iko
+useradd -m -G sys,wheel,users,adm,log -s /bin/bash iko
 EDITOR=vim visudo
 
 #repo work
@@ -30,9 +29,9 @@ reflector --country 'Singapore' --age 17 --protocol https --sort rate --save /et
 pacman -Syy
 
 echo Now installing KDE, Xorg, and other essential packages
-
+sleep 10s
 #package install hell
-pacman -S --noconfirm xorg xorg-apps xorg-server xorg-drivers xterm mesa linux-headers xdg-user-dirs fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged git unrar unzip htop lsb-release polkit man-db man-pages firefox cups system-config-printer foomatic-db-engine foomatic-db-ppds foomatic-db-nonfree-ppds gutenprint ghostscript networkmanager network-manager-applet lightdm lightdm-gtk-greeter ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts intel-ucode
+yes | pacman -S xorg xorg-apps xorg-server xorg-drivers xterm mesa linux-headers xdg-user-dirs fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged git unrar unzip htop lsb-release polkit man-db man-pages firefox cups system-config-printer foomatic-db-engine foomatic-db-ppds foomatic-db-nonfree-ppds gutenprint ghostscript networkmanager network-manager-applet lightdm lightdm-gtk-greeter ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts intel-ucode plasma-desktop
 
 systemctl enable lightdm.service
 systemctl enable NetworkManager.service
@@ -43,3 +42,4 @@ systemctl enable org.cups.cupsd.service
 pacman -S --noconfirm grub efibootmgr os-prober
 grub-install --target=x86_64-efi --bootloader-id=grub --efi-directory=/boot/efi 
 grub-mkconfig -o /boot/grub/grub.cfg
+
