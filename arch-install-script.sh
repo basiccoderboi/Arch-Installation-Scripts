@@ -13,5 +13,7 @@ cp arch-hosts /mnt/arch-hosts
 arch-chroot /mnt ./arch-chroot-packages.sh
 echo Setting up your passwords...
 sleep 5s
+echo Set your root password
 arch-chroot /mnt passwd
+echo Set your user password
 arch-chroot /mnt passwd iko
