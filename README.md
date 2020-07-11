@@ -13,7 +13,7 @@ OPTIONAL:Setup keyboard layout if need be
 1. Format partitions using cfdisk
 2. mkfs.ext4 your root partitions
 3. mkswap+swapon your swaps
-4. mkfs.fat -F32 your efi partition (if you have efi partition)
+4. mkfs.fat -F32 your efi partition (if you have efi partition), otherwise mount on exisiting partition
 5. Mount your root+efi partition
 6. Run arch-install-script and feel proud that you installed Arch Linux
 
