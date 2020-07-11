@@ -10,7 +10,7 @@ hwclock --systohc
 #networks and lang setup
 echo en_PH.UTF-8 UTF-8 >> /etc/locale.gen
 locale-gen
-echo en_PH.UTF-8 > /etc/locale.conf
+echo LANG=en_PH.UTF-8 > /etc/locale.conf
 export LANG=en_PH.UTF-8
 echo iko-ASUSX560UD > /etc/hostname
 cat arch-hosts > /etc/hosts
@@ -31,7 +31,7 @@ pacman -Syy
 echo Now installing KDE, Xorg, and other essential packages
 sleep 5s
 #package install hell
-pacman -S --noconfirm xinit xorg xorg-apps xorg-server xorg-drivers xterm mesa linux-headers xdg-user-dirs fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged git unrar unzip htop lsb-release polkit man-db man-pages firefox cups system-config-printer foomatic-db-engine foomatic-db-ppds foomatic-db-nonfree-ppds gutenprint ghostscript networkmanager network-manager-applet lightdm lightdm-gtk-greeter ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts intel-ucode plasma-desktop kde-applications texinfo spotify steam gimp 
+pacman -S --noconfirm xorg xorg-apps xorg-server xorg-drivers xterm mesa linux-headers xdg-user-dirs fuse2 fuse3 ntfs-3g exfat-utils pulseaudio gvfs dkms haveged git unrar unzip htop lsb-release polkit man-db man-pages firefox cups system-config-printer foomatic-db-engine foomatic-db-ppds foomatic-db-nonfree-ppds gutenprint ghostscript networkmanager network-manager-applet lightdm lightdm-gtk-greeter ttf-ubuntu-font-family ttf-dejavu ttf-bitstream-vera ttf-liberation noto-fonts intel-ucode plasma-desktop kde-applications texinfo spotify steam gimp 
 
 systemctl enable lightdm.service
 systemctl enable NetworkManager.service
@@ -43,3 +43,4 @@ pacman -S --noconfirm grub efibootmgr os-prober
 grub-install --target=x86_64-efi --bootloader-id=grub --efi-directory=/boot/efi 
 grub-mkconfig -o /boot/grub/grub.cfg
 
+echo Finished installing packages, going back to the live ISO...
