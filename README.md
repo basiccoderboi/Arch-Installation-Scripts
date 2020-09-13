@@ -7,7 +7,7 @@ This script aims to help you\* setup Arch Linux easily, with the formatting of d
 
 How to use this:
 
-OPTIONAL:Setup keyboard layout if need be
+OPTIONAL: Setup keyboard layout if need be
 
 0. Set up your system time
 1. Format partitions using cfdisk
@@ -19,5 +19,7 @@ OPTIONAL:Setup keyboard layout if need be
 
 ADVICE:
 efi partition - around 550M
+
 swap - size of RAM + 0.5M
+
 root - rest of device
