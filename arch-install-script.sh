@@ -2,7 +2,7 @@
 
 passwd
 
-pacstrap /mnt base base-devel linux-zen linux-firmware vim less dialog wpa_supplicant dhcpcd sudo reflector pacman-contrib usbutils pciutils
+pacstrap /mnt base base-devel linux linux-firmware vim less dialog wpa_supplicant dhcpcd sudo reflector pacman-contrib usbutils pciutils
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
